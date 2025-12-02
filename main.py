@@ -3,18 +3,12 @@ liste = {
     "persone": ["giacomo", "mario", "luigi", "anna", "maria", "francesca", "giorgio"]
 }
 
-avaiable_options = list(liste.keys()) + ["e"]
-
 print("Benvenuto nel programma di gestione delle liste!")
-
-
-
-
-
 
 choice = input("\n1 - Visualizza le liste \n"
     "2 - Aggiungi un elemento a una lista \n"
     "3 - Cerca un elemento in una lista \n"
+    "4 - Aggiungi una lista \n"
     "q - Esci\n"
     "Scegli un'opzione: ").lower().strip()
 
@@ -25,6 +19,7 @@ while choice != "q":
             for item in value:
                 print(f"- {item}")
     elif choice == "2":
+        avaiable_options = list(liste.keys()) + ["e"]
         list_choice = input(f"A quale lista vuoi aggiungere un elemento? ({', '.join(avaiable_options)} - indietro ): ").strip().lower()
         while list_choice not in avaiable_options:
             list_choice = input(f"A quale lista vuoi aggiungere un elemento? ({', '.join(avaiable_options)} - Indietro): ").strip().lower()
@@ -45,12 +40,20 @@ while choice != "q":
 
         if not found:
             print(f"{search_el} non è presente in nessuna delle liste.")
+    elif choice == "4":
+        new_list = input("Inserisci il nome della nuova lista: ").strip().lower()
+        if new_list in liste:
+            print(f"La lista {new_list} esiste già.")
+        else:
+            liste[new_list] = []
+            print(f"La lista {new_list} è stata creata.")
     else:
         print("Opzione non valida. Riprova.")
 
     choice = input("\n1 - Visualizza le liste \n"
     "2 - Aggiungi un elemento a una lista \n"
     "3 - Cerca un elemento in una lista \n"
+    "4 - Aggiungi una lista \n"
     "q - Esci\n"
     "Scegli un'opzione: ").lower().strip()
 
