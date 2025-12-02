@@ -9,6 +9,7 @@ choice = input("\n1 - Visualizza le liste \n"
     "2 - Aggiungi un elemento a una lista \n"
     "3 - Cerca un elemento in una lista \n"
     "4 - Aggiungi una lista \n"
+    "5 - Rimuovi un elemento da una lista \n"
     "q - Esci\n"
     "Scegli un'opzione: ").lower().strip()
 
@@ -47,6 +48,19 @@ while choice != "q":
         else:
             liste[new_list] = []
             print(f"La lista {new_list} è stata creata.")
+    elif choice == "5":
+        avaiable_options = list(liste.keys()) + ["e"]
+        list_choice = input(f"Da quale lista vuoi rimuovere un elemento? ({', '.join(avaiable_options)} - indietro ): ").strip().lower()
+        while list_choice not in avaiable_options:
+            list_choice = input(f"Da quale lista vuoi rimuovere un elemento? ({', '.join(avaiable_options)} - Indietro): ").strip().lower()
+        if list_choice != "e":
+            print(f"Elementi nella lista {list_choice}: {', '.join(liste[list_choice])}")
+            rem_element = input("Inserisci l'elemento da rimuovere: ").strip().lower()
+            if rem_element in liste[list_choice]:
+                liste[list_choice].remove(rem_element)
+                print(f"{rem_element} è stato rimosso dalla lista {list_choice}.")
+            else:
+                print(f"{rem_element} non è presente nella lista {list_choice}.")
     else:
         print("Opzione non valida. Riprova.")
 
@@ -54,6 +68,7 @@ while choice != "q":
     "2 - Aggiungi un elemento a una lista \n"
     "3 - Cerca un elemento in una lista \n"
     "4 - Aggiungi una lista \n"
+    "5 - Rimuovi un elemento da una lista \n"
     "q - Esci\n"
     "Scegli un'opzione: ").lower().strip()
 
