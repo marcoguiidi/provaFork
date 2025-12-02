@@ -3,8 +3,6 @@ liste = {
     "persone": ["giacomo", "mario", "luigi", "anna", "maria", "francesca", "giorgio"]
 }
 
-
-
 print("Benvenuto nel programma di gestione delle liste!")
 
 choice = input("\n1 - Visualizza le liste \n"
