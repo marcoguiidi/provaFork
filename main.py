@@ -1,6 +1,6 @@
 liste = {
     "animali": ["cane", "gatto", "elefante", "leone", "tigre", "orso"],
-    "persone": ["giacomo", "mario", "luigi", "anna", "maria", "francesca"]
+    "persone": ["giacomo", "mario", "luigi", "anna", "maria", "francesca", "giorgio"]
 }
 
 
@@ -58,5 +58,6 @@ while choice != "q":
     "4 - Aggiungi una lista \n"
     "q - Esci\n"
     "Scegli un'opzione: ").lower().strip()
+
 
 print("Programma terminato.")
